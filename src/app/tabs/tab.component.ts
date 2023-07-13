@@ -94,7 +94,7 @@ export class TabsComponent {
                   <h3>Tap into mapping technology to maximize profits</h3>
                 </div>
                 <div class="tab-data">
-                  <div class="tab-row">
+                  <div class="tab-row maps">
                     <div>
                       <img src="../assets/images/tab-3.png" alt="">
                     </div>
@@ -116,7 +116,10 @@ export class TabsComponent {
     {
       title: `<h2>Geospatial</h2><p>Navigate business challenges with climate analytics</p>`,
       active: false,
-      content: `<div class="tab-row flexCol">
+      content: `<div class="tab-heading">
+                  <h3>Geo-enable business for success</h3>
+                </div>
+                  <div class="tab-row flexCol">
                   <div>
                     <img src="../assets/images/tab-4.png" alt="">
                   </div>
