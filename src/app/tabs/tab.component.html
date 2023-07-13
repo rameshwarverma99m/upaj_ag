@@ -1,0 +1,16 @@
+<div class="tabs">
+  <div class="tab-links">
+    <ul class="tab-group">
+      <li *ngFor="let tab of tabs; index as i" class="tab" [class.active]="tab.active" (click)="changeTab(i)">
+        <ng-container>
+          <div class="link-data" [innerHTML]="tab.title"></div>
+        </ng-container>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <ng-container *ngFor="let tab of tabs">
+      <div class="tab-box" *ngIf="tab.active" [innerHTML]="tab.content"></div>
+    </ng-container>
+  </div>
+</div>

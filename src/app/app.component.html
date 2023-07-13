@@ -1,0 +1,36 @@
+<header class="header" *ngIf="showheader">
+  <div class="container">
+    <nav class="navbar">
+      <a class="logo" [routerLink]="['/']">
+        <img src="./assets/images/logo.svg" height="30" alt="xenesis logo">
+      </a>
+      <a [routerLink]="['/signup']" class="login-button">Signup/Login</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer class="footer" *ngIf="showfooter">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a [routerLink]="['/']">">
+          <img src="../assets/images/logo-white.svg" alt="logo">
+        </a>
+        <ul>
+          <li>
+            <a [routerLink]="['/']">>Privacy Policy</a>
+          </li>
+          <li>
+            <a [routerLink]="['/']">>Terms of Use</a>
+          </li>
+          <li>
+            <a [routerLink]="['/']">>Cookie Settings</a>
+          </li>
+        </ul>
+      </div>
+      <p class="copyright">© 2023 Upaj API. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

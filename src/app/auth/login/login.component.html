@@ -1,0 +1,47 @@
+<div class="auth-wrap">
+  <div class="auth-box">
+    <div class="upaj-logo"><img src="../../../assets/images/logo-gray.svg"></div>
+    <div class="upaj-form">
+      <div class="upaj-form-header">
+        <h1>Login</h1>
+        <p>to continue to Upaj API</p>
+      </div>
+      <div class="upaj-box">
+        <form autocomplete="off">
+          <div class="form-row">
+            <div class="form-input-wrap">
+              <input type="text" autocomplete="off" class="form-text-input" placeholder="Enter Registered Email ID">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-input-wrap">
+              <input type="password" autocomplete="off" class="form-text-input" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-input-wrap forget-password">
+              <a [routerLink]="['/forget-password']">Forgot password?</a>
+            </div>
+          </div>
+          <div class="form-row btn-row">
+            <div class="form-input-wrap">
+              <input type="submit" class="submit-btn" value="Login">
+            </div>
+          </div>
+          <div class="form-row create-account">
+            <div class="form-input-wrap">
+              <a [routerLink]="['/signup']">Create account</a>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-input-wrap">
+              <div class="info-msg">
+                for any queries, contact us at <strong>partner@upaj.org</strong>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
