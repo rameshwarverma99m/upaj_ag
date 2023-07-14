@@ -7,35 +7,35 @@
         <p>to test and subscribe to Upaj API</p>
       </div>
       <div class="upaj-box">
-        <form autocomplete="off">
+        <form [formGroup]="signUpForm" (ngSubmit)="signup()" autocomplete="off">
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" placeholder="Full Name">
+              <input type="text" autocomplete="off" class="form-text-input" formControlName="fullName" placeholder="Full Name">
             </div>
           </div>
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" placeholder="Organisation Name">
+              <input type="text" autocomplete="off" class="form-text-input" formControlName="orgName"  placeholder="Organisation Name">
             </div>
           </div>
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" placeholder="Enter Registered Email ID">
+              <input type="text" autocomplete="off" class="form-text-input" formControlName="email" placeholder="Enter Registered Email ID">
             </div>
           </div>
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" placeholder="Phone  Number">
+              <input type="text" autocomplete="off" class="form-text-input" formControlName="mobileNo" placeholder="Phone  Number">
             </div>
           </div>
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="password" autocomplete="off" class="form-text-input" placeholder="Enter password">
+              <input type="password" autocomplete="off" class="form-text-input" formControlName="password" placeholder="Enter password">
             </div>
           </div>
           <div class="form-row btn-row">
             <div class="form-input-wrap">
-              <input type="submit" class="submit-btn" value="Signup">
+              <input type="submit" [disabled]="!signUpForm.valid" class="submit-btn" value="Signup">
             </div>
           </div>
           <div class="form-row">
