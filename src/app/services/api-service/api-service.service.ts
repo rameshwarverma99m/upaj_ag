@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  apiURL: string = 'http://srv12.absolute.ag:4000/';
+  apiURL: string = 'https://uwrapiuat.igrow.ag/';
 
   constructor( private httpClient: HttpClient,) { }
 

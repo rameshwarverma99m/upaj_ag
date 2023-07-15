@@ -981,6 +981,10 @@ q:after {
   letter-spacing: 0.15px;
   border: none;
 }
+.upaj-box .form-row .form-input-wrap .submit-btn:disabled {
+  background-color: #d5d4d4;
+  color: #6f6f6f;
+}
 
 .upaj-box .form-row .form-input-wrap .info-msg {
   color: #000;

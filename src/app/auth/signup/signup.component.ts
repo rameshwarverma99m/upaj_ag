@@ -16,11 +16,10 @@ export class SignupComponent {
     private apiService: ApiService
 		) {
 		this.signUpForm = this.formBuilder.group({
-			fullName: ['', Validators.required],
-			orgName: ['', Validators.required],
+      fullName: ['', Validators.required],
+			orgName: [''],
       email: ['', Validators.required],
-      mobileNo: ['', Validators.required],
-			password: ['', Validators.required]
+      mobileNo: [''],
 		});
 	}
 
@@ -29,7 +28,6 @@ export class SignupComponent {
       userName: this.signUpForm.value.fullName,
       organization_name: this.signUpForm.value.orgName,
       userEmail: this.signUpForm.value.email,
-      // password: this.signUpForm.value.password,
       userMobile: this.signUpForm.value.mobileNo
     }
     console.log(jsn, '------------>>>>>>>>>>>>>>>>')
