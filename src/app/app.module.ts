@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiListComponent } from './api/api-list/api-list.component';
+import { ApiDetailComponent } from './api/api-detail/api-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    ApiListComponent,
+    ApiDetailComponent
   ],
   imports: [
     AppRoutingModule,

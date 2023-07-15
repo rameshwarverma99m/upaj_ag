@@ -5,6 +5,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { ApiListComponent } from './api/api-list/api-list.component';
+import { ApiDetailComponent } from './api/api-detail/api-detail.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'reset-password',
     component: ResetPasswordComponent
+  },
+  {
+    path: 'api-list',
+    component: ApiListComponent
+  },
+  {
+    path: 'api-detail',
+    component: ApiDetailComponent
   },
 ];
 

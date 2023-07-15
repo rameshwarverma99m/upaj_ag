@@ -1,0 +1,370 @@
+<div class="breadcrum">
+  <div class="container">
+    <nav>
+      <ul class="cd-breadcrumb custom-separator">
+        <li><a href="#">Home</a></li>
+        <li class="current">API Directory</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div>
+  <div class="container">
+    <div class="api-wrap">
+      <div class="filterbox" [ngClass]="showFilterPopup ? 'showFilterPopup' : ''">
+        <div class="filterbox-inner">
+            <div class="filter-title">
+              <div class="filter-heading">
+                <button class="close-btn" (click)="closeFilter()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                      fill="black" />
+                  </svg>
+                </button>
+                <h2>Filters</h2>
+              </div>
+              <button class="clearall">Clear All</button>
+            </div>
+            <div class="filter-container">
+              <div class="category-wrap">
+                <div class="category-title" (click)="hideCategory()">
+                  <h3>Category</h3>
+                  <span [ngClass]="categoryhide ? 'rotate' : ''">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.32702 11.4714C8.1464 11.652 7.85361 11.652 7.67299 11.4714L2.95773 6.75608C2.77711 6.57546 2.77711 6.28267 2.95773 6.10205L3.17575 5.884C3.35636 5.70338 3.6492 5.70338 3.82982 5.884L8 10.0542L12.1702 5.884C12.3508 5.70338 12.6436 5.70338 12.8242 5.884L13.0423 6.10205C13.2229 6.28267 13.2229 6.57546 13.0423 6.75608L8.32702 11.4714Z"
+                        fill="black" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="category-list" [ngClass]="categoryhide ? 'hide' : ''">
+                  <div class="category-radio-btn">
+                    <label for="weather">
+                      <input type="radio" id="weather" name="category">
+                      <span>Absolute Weather(24)</span>
+                    </label>
+                  </div>
+                  <div class="category-radio-btn">
+                    <label for="land">
+                      <input type="radio" id="land" name="category">
+                      <span>Absolute land(4)</span>
+                    </label>
+                  </div>
+                  <div class="category-radio-btn">
+                    <label for="farmhealth">
+                      <input type="radio" id="farmhealth" name="category">
+                      <span>Absolute Farm Health(45)</span>
+                    </label>
+                  </div>
+                  <div class="category-radio-btn">
+                    <label for="soilhealth">
+                      <input type="radio" id="soilhealth" name="category">
+                      <span>Soil health(23)</span>
+                    </label>
+                  </div>
+                  <div class="category-radio-btn">
+                    <label for="yieldprediction">
+                      <input type="radio" id="yieldprediction" name="category">
+                      <span>Absolute Yield Prediction(34)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="category-wrap industry">
+              <div class="category-title" (click)="hideIndustri()">
+                <h3>Industry</h3>
+                <span [ngClass]="industriHide ? 'rotate' : ''">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.32702 11.4714C8.1464 11.652 7.85361 11.652 7.67299 11.4714L2.95773 6.75608C2.77711 6.57546 2.77711 6.28267 2.95773 6.10205L3.17575 5.884C3.35636 5.70338 3.6492 5.70338 3.82982 5.884L8 10.0542L12.1702 5.884C12.3508 5.70338 12.6436 5.70338 12.8242 5.884L13.0423 6.10205C13.2229 6.28267 13.2229 6.57546 13.0423 6.75608L8.32702 11.4714Z"
+                      fill="black" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-list" [ngClass]="industriHide ? 'hide' : ''">
+                <div class="category-radio-btn">
+                  <label for="idustry-1">
+                    <input type="checkbox" id="idustry-1" name="idustry-1">
+                    <span>Input Company(45)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-2">
+                    <input type="checkbox" id="idustry-2" name="idustry-2">
+                    <span>NGOs(3)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-3">
+                    <input type="checkbox" id="idustry-3" name="idustry-3">
+                    <span>Government(12)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-4">
+                    <input type="checkbox" id="idustry-4" name="idustry-4">
+                    <span>Soil health(23)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-5">
+                    <input type="checkbox" id="idustry-5" name="idustry-5">
+                    <span>FinTech(26)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-6">
+                    <input type="checkbox" id="idustry-6" name="idustry-6">
+                    <span>NGOs(3)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-7">
+                    <input type="checkbox" id="idustry-7" name="idustry-7">
+                    <span>Government(12)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-8">
+                    <input type="checkbox" id="idustry-8" name="idustry-8">
+                    <span>Soil health(23)</span>
+                  </label>
+                </div>
+                <div class="category-radio-btn">
+                  <label for="idustry-9">
+                    <input type="checkbox" id="idustry-9" name="idustry-9">
+                    <span>FinTech(26)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-apply">
+            <button class="apply-btn" (click)="applyFilter()">Apply</button>
+          </div>
+        </div>
+      </div>
+      <div class="api-list-box">
+        <div class="api-container">
+          <div class="api-search">
+            <div class="filter-btn-wrap" (click)="openFilter();">
+              <span>Showing 0 of 100</span>
+              <button class="filter-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M7.005 6H17.005L11.995 12.3L7.005 6ZM4.255 5.61C6.275 8.2 10.005 13 10.005 13V19C10.005 19.55 10.455 20 11.005 20H13.005C13.555 20 14.005 19.55 14.005 19V13C14.005 13 17.725 8.2 19.745 5.61C20.255 4.95 19.785 4 18.955 4H5.045C4.215 4 3.745 4.95 4.255 5.61Z"
+                    fill="#001E00" />
+                </svg>
+              </button>
+            </div>
+            <div class="searchbox">
+              <div class="search">
+                <span class="fa-search">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
+                    <path
+                      d="M15.0572 13.2655H14.333L14.0763 13.018C15.1763 11.7347 15.7447 9.98388 15.433 8.12305C15.0022 5.57471 12.8755 3.53971 10.3088 3.22805C6.43134 2.75138 3.16801 6.01471 3.64467 9.89221C3.95634 12.4589 5.99134 14.5855 8.53967 15.0164C10.4005 15.328 12.1513 14.7597 13.4347 13.6597L13.6822 13.9164V14.6405L17.578 18.5364C17.9538 18.9122 18.568 18.9122 18.9438 18.5364C19.3197 18.1605 19.3197 17.5464 18.9438 17.1705L15.0572 13.2655ZM9.55717 13.2655C7.27467 13.2655 5.43217 11.423 5.43217 9.14055C5.43217 6.85805 7.27467 5.01555 9.55717 5.01555C11.8397 5.01555 13.6822 6.85805 13.6822 9.14055C13.6822 11.423 11.8397 13.2655 9.55717 13.2655Z"
+                      fill="#1F1F1F" />
+                  </svg>
+                </span>
+                <input class="input-search" placeholder="Type here to search">
+              </div>
+              <div class="changeListType">
+                <button class="changeListTypeBtn" (click)="cardType()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <rect width="24" height="24" transform="translate(0.94133)" fill="#FFF7EE" />
+                    <path
+                      d="M3.94133 3V11H11.9413V3H3.94133ZM9.94133 9H5.94133V5H9.94133V9ZM3.94133 13V21H11.9413V13H3.94133ZM9.94133 19H5.94133V15H9.94133V19ZM13.9413 3V11H21.9413V3H13.9413ZM19.9413 9H15.9413V5H19.9413V9ZM13.9413 13V21H21.9413V13H13.9413ZM19.9413 19H15.9413V15H19.9413V19Z"
+                      fill="black" />
+                  </svg>
+                </button>
+                <button class="changeListTypeBtn" (click)="listType()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <rect x="0.470673" width="24" height="24" rx="2" fill="#2D313C" />
+                    <path
+                      d="M4.47067 13C5.02067 13 5.47067 12.55 5.47067 12C5.47067 11.45 5.02067 11 4.47067 11C3.92067 11 3.47067 11.45 3.47067 12C3.47067 12.55 3.92067 13 4.47067 13ZM4.47067 17C5.02067 17 5.47067 16.55 5.47067 16C5.47067 15.45 5.02067 15 4.47067 15C3.92067 15 3.47067 15.45 3.47067 16C3.47067 16.55 3.92067 17 4.47067 17ZM4.47067 9C5.02067 9 5.47067 8.55 5.47067 8C5.47067 7.45 5.02067 7 4.47067 7C3.92067 7 3.47067 7.45 3.47067 8C3.47067 8.55 3.92067 9 4.47067 9ZM8.47067 13H20.4707C21.0207 13 21.4707 12.55 21.4707 12C21.4707 11.45 21.0207 11 20.4707 11H8.47067C7.92067 11 7.47067 11.45 7.47067 12C7.47067 12.55 7.92067 13 8.47067 13ZM8.47067 17H20.4707C21.0207 17 21.4707 16.55 21.4707 16C21.4707 15.45 21.0207 15 20.4707 15H8.47067C7.92067 15 7.47067 15.45 7.47067 16C7.47067 16.55 7.92067 17 8.47067 17ZM7.47067 8C7.47067 8.55 7.92067 9 8.47067 9H20.4707C21.0207 9 21.4707 8.55 21.4707 8C21.4707 7.45 21.0207 7 20.4707 7H8.47067C7.92067 7 7.47067 7.45 7.47067 8ZM4.47067 13C5.02067 13 5.47067 12.55 5.47067 12C5.47067 11.45 5.02067 11 4.47067 11C3.92067 11 3.47067 11.45 3.47067 12C3.47067 12.55 3.92067 13 4.47067 13ZM4.47067 17C5.02067 17 5.47067 16.55 5.47067 16C5.47067 15.45 5.02067 15 4.47067 15C3.92067 15 3.47067 15.45 3.47067 16C3.47067 16.55 3.92067 17 4.47067 17ZM4.47067 9C5.02067 9 5.47067 8.55 5.47067 8C5.47067 7.45 5.02067 7 4.47067 7C3.92067 7 3.47067 7.45 3.47067 8C3.47067 8.55 3.92067 9 4.47067 9ZM8.47067 13H20.4707C21.0207 13 21.4707 12.55 21.4707 12C21.4707 11.45 21.0207 11 20.4707 11H8.47067C7.92067 11 7.47067 11.45 7.47067 12C7.47067 12.55 7.92067 13 8.47067 13ZM8.47067 17H20.4707C21.0207 17 21.4707 16.55 21.4707 16C21.4707 15.45 21.0207 15 20.4707 15H8.47067C7.92067 15 7.47067 15.45 7.47067 16C7.47067 16.55 7.92067 17 8.47067 17ZM7.47067 8C7.47067 8.55 7.92067 9 8.47067 9H20.4707C21.0207 9 21.4707 8.55 21.4707 8C21.4707 7.45 21.0207 7 20.4707 7H8.47067C7.92067 7 7.47067 7.45 7.47067 8Z"
+                      fill="#E6E6E6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="api-list" [ngClass]="listStyle ? 'listStyle' : ''">
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
+                    with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
+                    with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
+                    with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
+                    with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+            <div class="api-list-card">
+              <a href="#">
+                <div class="api-list-heading">
+                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
+                  <p>It measures how much land is covered with vegetation - Index</p>
+                </div>
+                <ul class="tags">
+                  <li>Weather</li>
+                  <li>Banking</li>
+                  <li>Banking</li>
+                  <li>+4</li>
+                </ul>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
