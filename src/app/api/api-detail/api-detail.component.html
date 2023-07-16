@@ -1,1 +1,361 @@
-<p>api-detail works!</p>
+<div class="breadcrum">
+  <div class="container">
+    <nav>
+      <ul class="cd-breadcrumb custom-separator">
+        <li><a href="#">Home</a></li>
+        <li class="current">API Directory</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<section class="api-list-section-1">
+  <div class="container">
+    <div class="api-list-banner">
+      <div class="list-heading">
+        <h1>Evapotranspiration Historical - 30 years Monthly/Annualy API</h1>
+        <p>Weather API is a powerful tool providing end-to-end weather information. It gives access to accurate,
+          up-to-date, and critical information on weather forecasts, current conditions data, and a wealth of 30 years
+          of
+          historical data. In addition to forecasting weather, deep insights into weather alerts are also available.</p>
+      </div>
+      <div class="api-pricing">
+        <div class="api-price">
+          <div class="selling-price"><strong>₹4/per API call</strong></div>
+          <div class="original-price">₹7 per API call</div>
+        </div>
+        <div class="discount">58%<span>Discount</span></div>
+      </div>
+      <div class="btn-row">
+        <a class="btn primary-btn" href="#">Sign up and Start using</a>
+        <a class="btn secondaty-btn" href="#">View Documentation</a>
+      </div>
+      <div class="cloude-enabled">
+        <h2>Enablements with</h2>
+        <div class="cloude-service-list">
+          <div>
+            <img src="../../../assets/images/cloude-serivice-1.svg" alt="">
+          </div>
+          <div>
+            <img src="../../../assets/images/cloude-serivice-2.svg" alt="">
+          </div>
+          <div>
+            <img src="../../../assets/images/cloude-serivice-3.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="api-code-section">
+  <div class="container">
+    <div class="api-version">
+      <span>API Version</span>
+      <div class="selcebox">
+        <select class="api-select" id="select">
+          <option>Version 1</option>
+        </select>
+      </div>
+    </div>
+    <div class="api-code">
+      <div class="api-code-heading">
+        <div class="code-heading">
+          <h2>Try Upaj API’s</h2>
+          <p>You can try out our APIs on the Upaj Swagger Public Workspace. </p>
+        </div>
+        <div class="btn-wrap">
+          <a href="#" class="btn primary-btn">Let’s Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none">
+              <path d="M9.5 4.5V6.5H16.09L4.5 18.09L5.91 19.5L17.5 7.91V14.5H19.5V4.5H9.5Z" fill="black" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="upaj-api">
+        <ul class="code-tabs">
+          <li class="code-tab" [class.active]="activeTab === 1" (click)="setActiveTab(1)">cURL</li>
+          <li class="code-tab" [class.active]="activeTab === 2" (click)="setActiveTab(2)">Request Json</li>
+          <li class="code-tab" [class.active]="activeTab === 3" (click)="setActiveTab(3)">Response</li>
+        </ul>
+        <div class="code-tab-content">
+          <div class="hidden" [ngClass]="activeTab === 1 ? 'show' : ''">
+            <div class="code-container">
+              <div class="api-demo-code">
+                <pre>
+                  <code class="language-javascript">
+                    {{ "import { Auth } from './auth'" }}
+                    {{"const ticketImg = 'https://myticketimage.com';" }}
+
+                    function Host() {{ '{' }}
+
+                      {{ "const { data: signer } = useSigner();" }}
+                      {{ "const { isConnected, address } =" }}
+                      {{ "useAccount();"}}
+                      {{ "const [userAccess, setUserAccess] =" }}
+                      {{ "useState(false);"}}
+
+                      {{ "useEffect(() => { " }}
+
+                      {{ "const interval = setInterval( async () => {" }}
+                      {{  "if (isConnected && signer) {"}}
+                       
+                      {{ "const = await hasAccess(signer," }}
+                      {{ "GATE_CONTRACT_ADDRESS, GATE_ID);" }}
+                       
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="hidden" [ngClass]="activeTab === 2 ? 'show' : ''">
+            <div class="code-container">
+              <div class="api-demo-code">
+                <pre>
+                  <code class="language-javascript">
+                    {{ "import { Auth } from './auth'" }}
+                    {{"const ticketImg = 'https://myticketimage.com';" }}
+
+                    function Host() {{ '{' }}
+
+                      {{ "const { data: signer } = useSigner();" }}
+                      {{ "const { isConnected, address } =" }}
+                      {{ "useAccount();"}}
+                      {{ "const [userAccess, setUserAccess] =" }}
+                      {{ "useState(false);"}}
+
+                      {{ "useEffect(() => { " }}
+
+                      {{ "const interval = setInterval( async () => {" }}
+                      {{  "if (isConnected && signer) {"}}
+                       
+                      {{ "const = await hasAccess(signer," }}
+                      {{ "GATE_CONTRACT_ADDRESS, GATE_ID);" }}
+                       
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="hidden" [ngClass]="activeTab === 3 ? 'show' : ''">
+            <div class="code-container">
+              <div class="api-demo-code">
+                <pre>
+                  <code class="language-javascript">
+                    {{ "import { Auth } from './auth'" }}
+                    {{"const ticketImg = 'https://myticketimage.com';" }}
+
+                    function Host() {{ '{' }}
+
+                      {{ "const { data: signer } = useSigner();" }}
+                      {{ "const { isConnected, address } =" }}
+                      {{ "useAccount();"}}
+                      {{ "const [userAccess, setUserAccess] =" }}
+                      {{ "useState(false);"}}
+
+                      {{ "useEffect(() => { " }}
+
+                      {{ "const interval = setInterval( async () => {" }}
+                      {{  "if (isConnected && signer) {"}}
+                       
+                      {{ "const = await hasAccess(signer," }}
+                      {{ "GATE_CONTRACT_ADDRESS, GATE_ID);" }}
+                       
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="upaj-api">
+        <div class="code-tab-content" style="border-radius: 16px;">
+          <div class="code-container">
+            <div class="api-demo-code">
+              <pre>
+                <code class="language-javascript">
+                 {{ "API PROD URL" }}{{ ": https://cloud.upaj.org/api/map/farmHealth" }}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="api-table-section">
+  <div class="container">
+    <div class="api-table-wrap">
+      <h2 class="api-table-heading">Input Attributes</h2>
+      <div class="api-table-data">
+        <table class="api-table attribute">
+          <thead class="api-table-head">
+            <tr>
+              <th>Attribute</th>
+              <th>Data Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Weather Historical</td>
+              <td>string</td>
+              <td>Polygon of area of interest is entered in format
+                [[longitude1,latitude1],[longitude2,latitude2],...,[longitude1,latitude1]]Polygon string should be
+                circular and used in EPSG:4326 format.</td>
+            </tr>
+            <tr>
+              <td>start_date</td>
+              <td>string</td>
+              <td>Solar radiation (in watt) provides both light and heat energy that is necessary for living organisms
+              </td>
+            </tr>
+            <tr>
+              <td>end_date</td>
+              <td>string</td>
+              <td>date in format YYYY-MM-DD for which historical weather data is shown</td>
+            </tr>
+            <tr>
+              <td>duration</td>
+              <td>string</td>
+              <td>Daily light integral (in moles) used to evaluate amount of light received by plants</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="api-table-wrap">
+      <h2 class="api-table-heading">Response Parameters</h2>
+      <div class="api-table-data">
+        <table class="api-table">
+          <thead class="api-table-head">
+            <tr>
+              <th>Attribute</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Weather Historical</td>
+              <td>Historical weather data of specified date range</td>
+            </tr>
+            <tr>
+              <td>SolarRadiation_watt</td>
+              <td>Solar radiation (in watt) provides both light and heat energy that is necessary for living organisms</td>
+            </tr>
+            <tr>
+              <td>date</td>
+              <td>date in format YYYY-MM-DD for which historical weather data is shown</td>
+            </tr>
+            <tr>
+              <td>DailyLightIntegral_moles</td>
+              <td>Daily light integral (in moles) used to evaluate amount of light received by plants</td>
+            </tr>
+            <tr>
+              <td>Humidity_Percent</td>
+              <td>Humidity (in percentage) gives amount of water vapour present in air and holds importance in surface life</td>
+            </tr>
+            <tr>
+              <td>MinHumidity_Percent</td>
+              <td>Minimum Humidity (in percentage) gives minimum amount of water vapour in air</td>
+            </tr>
+            <tr>
+              <td>MaxHumidity_Percent</td>
+              <td>Maximum Humidity (in percentage) gives maximum amount of water vapour in air</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="api-table-section error-codes">
+  <div class="container">
+    <div class="api-table-wrap">
+      <h2 class="api-table-heading">Response Code & Descriptions</h2>
+      <div class="api-table-data">
+        <div class="status-code">HTTP Status codes</div>
+        <table class="api-table">
+          <thead class="api-table-head">
+            <tr>
+              <th>Status Code</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>200</td>
+              <td>OK</td>
+            </tr>
+            <tr>
+              <td>201</td>
+              <td>Created</td>
+            </tr>
+            <tr>
+              <td>202</td>
+              <td>No Content</td>
+            </tr>
+            <tr>
+              <td>203</td>
+              <td>Bad Requested</td>
+            </tr>
+            <tr>
+              <td>204</td>
+              <td>Unauthorized</td>
+            </tr>
+            <tr>
+              <td>205</td>
+              <td>Not Found</td>
+            </tr>
+            <tr>
+              <td>206</td>
+              <td>Not Acceptable</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="api-table-data">
+        <div class="status-code">API Error code</div>
+        <table class="api-table">
+          <thead class="api-table-head">
+            <tr>
+              <th>Status Code</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>200</td>
+              <td>OK</td>
+            </tr>
+            <tr>
+              <td>201</td>
+              <td>Created</td>
+            </tr>
+            <tr>
+              <td>202</td>
+              <td>No Content</td>
+            </tr>
+            <tr>
+              <td>203</td>
+              <td>Bad Requested</td>
+            </tr>
+            <tr>
+              <td>204</td>
+              <td>Unauthorized</td>
+            </tr>
+            <tr>
+              <td>205</td>
+              <td>Not Found</td>
+            </tr>
+            <tr>
+              <td>206</td>
+              <td>Not Acceptable</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

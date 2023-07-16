@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./api-detail.component.css']
 })
 export class ApiDetailComponent {
+  activeTab: number = 1;
 
+  setActiveTab(tabNumber: number) {
+    this.activeTab = tabNumber;
+  }
 }

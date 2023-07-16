@@ -1,3 +1,5 @@
+@import '../node_modules/prismjs/themes/prism-okaidia.css';
+
 html {
   scroll-behavior: smooth;
 }
@@ -1209,14 +1211,17 @@ q:after {
   position: relative;
   cursor: pointer;
 }
-.category-title span.rotate{
+
+.category-title span.rotate {
   transform: rotate(-90deg);
 }
-.category-list{
+
+.category-list {
   overflow: hidden;
   margin-top: 20px;
   transition: height 0.4s ease;
 }
+
 .category-list.hide {
   height: 0;
   margin-top: 0;
@@ -1443,28 +1448,365 @@ q:after {
   line-height: 18px;
 }
 
+/* api List detail page  */
+.api-list-section-1 {
+  padding-top: 175px;
+  background: #ffffff url('./assets/images/grid.png') no-repeat center -275px / 1920px 850px;
+  padding-bottom: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.api-list-section-1 .api-list-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.api-list-section-1 .api-list-banner .list-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.api-list-section-1 .api-list-banner .list-heading>h1 {
+  color: #000;
+  font-family: Figtree;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.api-list-section-1 .api-list-banner .list-heading>p {
+  color: #000;
+  font-family: Figtree;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  max-width: 1018px;
+}
+
+.api-list-section-1 .api-list-banner .api-pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.api-list-section-1 .api-list-banner .api-pricing .api-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.api-list-section-1 .api-list-banner .api-pricing .api-price .selling-price {
+  color: #000;
+  font-family: Figtree;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.api-list-section-1 .api-list-banner .api-pricing .api-price .original-price {
+  color: #929292;
+  font-family: Figtree;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration-line: strikethrough;
+}
+
+.api-list-section-1 .api-list-banner .api-pricing .discount {
+  color: #14B13B;
+  font-family: Figtree;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
 
 
+.api-list-section-1 .api-list-banner .api-pricing .discount>span {
+  color: #929292;
+  font-family: Figtree;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.cloude-enabled {
+  display: flex;
+  padding: 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+  margin-top: 175px;
+}
+
+.cloude-enabled>h2 {
+  color: #484848;
+  font-family: Figtree;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26.4px;
+}
+
+.cloude-service-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.api-version {
+  display: flex;
+  padding: 32px 0px;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+  gap: 12px;
+}
+
+.api-version>span {
+  color: #484848;
+  font-family: Figtree;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.api-select {
+  display: flex;
+  padding: 16px 24px 16px 24px;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: #FFF;
+  position: relative;
+}
+
+.selcebox {
+  position: relative;
+}
+
+.api-code {
+  display: flex;
+  padding: 40px 72px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background: #FFF7EE;
+}
+
+.api-code .api-code-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.api-code .api-code-heading .code-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+}
+
+.api-code .api-code-heading .code-heading>h2 {
+  color: #000;
+  text-align: center;
+  font-family: Figtree;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+.api-code .api-code-heading .btn-wrap .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
 
 
+.upaj-api {
+  margin-top: 40px;
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 16px;
+  background: #292929;
+}
 
+.upaj-api .code-tabs {
+  display: flex;
+}
 
+.upaj-api .code-tabs .code-tab {
+  height: 41px;
+  padding: 14px 35px 13px 35px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  color: #FFF;
+  font-family: Figtree;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+}
 
+.upaj-api .code-tabs .code-tab.active {
+  border-radius: 12px 12px 0px 0px;
+  border-top: 1px solid #818181;
+  border-right: 1px solid #818181;
+  border-left: 1px solid #818181;
+  background: rgba(87, 87, 87, 0.50);
+}
 
+.code-tab-content {
+  border-radius: 0px 0px 16px 16px;
+  border: 1px solid #818181;
+  background: rgba(87, 87, 87, 0.50);
+  max-height: 555px;
+  width: 100%;
+}
 
+.code-tab-content .hidden {
+  display: none;
+}
 
+.code-tab-content .hidden.show {
+  display: block;
+}
 
+.code-container {
+  padding: 0 20px;
+}
 
+.code-container .api-demo-code {
+  color: #d4d4d4;
+  font-family: 'Courier New', Courier, monospace;
+}
 
+.code-container .api-demo-code pre[class*="language-"],
+.code-container .api-demo-code code[class*="language-"] {
+  background-color: transparent;
+  white-space: pre-line;
+  padding: 0;
+  margin: 0;
+}
 
+.api-table-section {
+  padding: 60px 0;
+}
 
+.api-table-section.error-codes {
+  background-color: #F0F0F0;
+}
 
+.api-table-section .api-table-wrap {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  margin-bottom: 60px;
+}
 
+.api-table-section .api-table-wrap .api-table-heading {
+  color: #000000;
+  font-family: Figtree;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
 
+.api-table-section .api-table-wrap .api-table-data {
+  padding: 0 64px;
+}
 
+.api-table-section .api-table-wrap .api-table-data .status-code {
+  color: #484848;
+  font-family: Figtree;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  margin-bottom: 24px;
+}
 
+.api-table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  border-radius: 4px;
+  width: 100%;
+}
 
+.api-table thead th {
+  background: #000;
+  color: #ffffff;
+  text-align: left;
+  padding: 16px 24px;
+}
 
+.api-table thead th:first-child,
+.api-table.attribute thead th:first-child,
+.api-table.attribute thead th:nth-child(2) {
+  width: 200px;
+  border-right: 1px solid #ffffff;
+}
+
+.api-table tbody td,
+.api-table.attribute thead th {
+  padding: 16px 24px;
+  font-family: Figtree;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  vertical-align: middle;
+}
+
+.api-table tbody td {
+  color: #000000;
+}
+
+.api-table.attribute thead th {
+  color: #ffffff;
+}
+
+.api-table tbody tr td:first-child,
+.api-table.attribute tbody tr td:first-child,
+.api-table.attribute tbody tr td:nth-child(2) {
+  width: 200px;
+  border-right: 1px solid #000000;
+}
+
+.api-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 
 
