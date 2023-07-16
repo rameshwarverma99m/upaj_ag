@@ -12,4 +12,8 @@ export class ApiService {
   public post(url: string, data : any) {
 		return this.httpClient.post(`${this.apiURL}${url}`, data);
 	}
+
+  public get(url: string){
+    return this.httpClient.get(`${this.apiURL}${url}`);
+  }
 }
