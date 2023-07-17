@@ -1566,6 +1566,8 @@ q:after {
   display: flex;
   align-items: center;
   gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .api-version {
@@ -1744,6 +1746,8 @@ q:after {
 
 .api-table-section .api-table-wrap .api-table-data {
   padding: 0 64px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 
 .api-table-section .api-table-wrap .api-table-data .status-code {
@@ -1762,6 +1766,10 @@ q:after {
   border-collapse: collapse;
   border-radius: 4px;
   width: 100%;
+}
+
+.api-table.attribute {
+  min-width: 610px;
 }
 
 .api-table thead th {
@@ -1808,7 +1816,9 @@ q:after {
   background-color: #f2f2f2;
 }
 
-
+.mobile-btn-go {
+  display: none;
+}
 
 
 
@@ -1930,6 +1940,14 @@ q:after {
 
   .api-list-card {
     width: calc(50% - 8px);
+  }
+
+  .api-list-section-1 {
+    padding-top: 32px;
+  }
+
+  .api-list-section-1 .api-list-banner .list-heading>h1 {
+    font-size: 36px;
   }
 }
 
@@ -2213,6 +2231,91 @@ q:after {
   .filter-title .filter-heading .close-btn {
     display: flex;
   }
+
+  .api-list-section-1 {
+    padding-top: 56px;
+    background: #ffffff url('./assets/images/grid.png') no-repeat center -300px / 1920px 850px;
+    padding-bottom: 56px;
+  }
+
+  .cloude-enabled {
+    margin-top: 0;
+  }
+
+  .cloude-enabled {
+    margin-top: 64px;
+    padding: 0;
+  }
+
+  .api-code {
+    margin: 0 -16px;
+    border-radius: 0;
+    padding: 64px 16px;
+  }
+
+  .btn-wrap {
+    display: none;
+  }
+
+  .api-code .api-code-heading {
+    justify-content: center;
+  }
+
+  .api-code .api-code-heading .code-heading {
+    text-align: center;
+  }
+
+  .api-code .api-code-heading .code-heading>h2 {
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .api-code .api-code-heading .code-heading>p {
+    text-align: center;
+    width: 100%;
+  }
+
+  .upaj-api {
+    padding: 12px;
+  }
+
+  .mobile-btn-go {
+    margin-top: 24px;
+    width: 100%;
+    display: block;
+  }
+
+  .mobile-btn-go>a {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .api-table-section .api-table-wrap .api-table-data {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .api-table-section .api-table-wrap .api-table-heading {
+    font-size: 28px;
+    line-height: normal;
+  }
+  .api-table-section .api-table-wrap .api-table-data .status-code{
+    font-size: 20px;
+  }
+  .api-table tbody td {
+    width: 50%;
+  }
+
+  .api-table-section .api-table-wrap {
+    padding-top: 0;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -2274,5 +2377,47 @@ q:after {
 
   .api-list-card {
     width: 100%;
+  }
+
+  .api-list-section-1 .api-list-banner .api-pricing .api-price {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .api-list-section-1 .btn-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .api-list-section-1 .btn-row .btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  .api-version>span {
+    font-size: 16px;
+  }
+
+  .api-version {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .api-select,
+  .selcebox {
+    width: 100%;
+  }
+
+  .upaj-api .code-tabs .code-tab {
+    font-size: 12px;
+    padding: 14px 24px 13px 24px;
+  }
+
+  .code-tab-content {
+    max-height: none;
   }
 }
