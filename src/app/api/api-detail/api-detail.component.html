@@ -2,7 +2,7 @@
   <div class="container">
     <nav>
       <ul class="cd-breadcrumb custom-separator">
-        <li><a href="#">Home</a></li>
+        <li><a [routerLink]="['/']">Home</a></li>
         <li class="current">API Directory</li>
       </ul>
     </nav>
@@ -64,7 +64,7 @@
           <p>You can try out our APIs on the Upaj Swagger Public Workspace. </p>
         </div>
         <div class="btn-wrap">
-          <a href="#" class="btn primary-btn">Let’s Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          <a [routerLink]="['/signup']" class="btn primary-btn">Let’s Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
               viewBox="0 0 24 24" fill="none">
               <path d="M9.5 4.5V6.5H16.09L4.5 18.09L5.91 19.5L17.5 7.91V14.5H19.5V4.5H9.5Z" fill="black" />
             </svg></a>
@@ -180,7 +180,7 @@
         </div>
       </div>
       <div class="mobile-btn-go">
-        <a href="#" class="btn primary-btn"><span>Let’s Go</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        <a [routerLink]="['/signup']" class="btn primary-btn"><span>Let’s Go</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           viewBox="0 0 24 24" fill="none">
           <path d="M9.5 4.5V6.5H16.09L4.5 18.09L5.91 19.5L17.5 7.91V14.5H19.5V4.5H9.5Z" fill="black" />
         </svg></a>
