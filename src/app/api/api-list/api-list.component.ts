@@ -137,4 +137,19 @@ export class ApiListComponent {
     this.categoryFilterForm.reset();
     this.industryFilterForm.reset();
   }
+
+  showCount(type: string, name: string){
+    let list = [];
+    if(type === 'category'){
+      list = this.allApiList.filter((el: any) => {
+        return el.category_name === name;
+      })
+    }
+    if(type === 'industry'){
+      list = this.allApiList.filter((el: any) => {
+        return el.industry_name.includes(name);
+      })
+    }
+    return list.length;
+  }
 }

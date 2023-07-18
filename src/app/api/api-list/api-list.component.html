@@ -43,7 +43,7 @@
                     <div class="category-radio-btn" *ngFor="let category of categoryList">
                       <label for="{{category.category_name}}">
                         <input type="radio" id="{{category.category_name}}" formControlName="category" name="category" [value]='category.category_name'>
-                        <span>{{category.category_name}}</span>
+                        <span>{{category.category_name}}({{showCount('category', category.category_name)}})</span>
                       </label>
                     </div>
                   </div>
@@ -65,7 +65,7 @@
                     <div class="category-radio-btn" *ngFor="let industry of industryList">
                       <label for="{{industry.industry_name}}">
                         <input type="checkbox" id="{{industry.industry_name}}" [formControlName]="industry.industry_name" name="{{industry.industry_name}}">
-                        <span>{{industry.industry_name}}</span>
+                        <span>{{industry.industry_name}}({{showCount('industry', industry.industry_name)}})</span>
                       </label>
                     </div>
                   </div>
@@ -81,7 +81,7 @@
         <div class="api-container">
           <div class="api-search">
             <div class="filter-btn-wrap" (click)="openFilter();">
-              <span>Showing 0 of 100</span>
+              <span>Showing {{apiList.length}} of 100</span>
               <button class="filter-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
@@ -123,13 +123,16 @@
           </div>
           <div class="api-list" [ngClass]="listStyle ? 'listStyle' : ''">
             <div class="api-list-card" *ngFor="let api of apiList">
-              <a [routerLink]="['/']">
+              <a routerLink="/api-detail/{{api.api_code}}">
                 <div class="api-list-heading">
                   <h2>{{ api.api_name }}</h2>
                   <p>{{ api.about }}</p>
                 </div>
                 <ul class="tags">
-                  <li *ngFor="let industry of api.industry_name"><span>{{industry}}</span></li>
+                  <li><span>{{api.industry_name[0]}}</span></li>
+                  <li *ngIf="api.industry_name[1]"><span>{{api.industry_name[1]}}</span></li>
+                  <li *ngIf="api.industry_name[2]"><span>{{api.industry_name[2]}}</span></li>
+                  <li *ngIf="(api.industry_name.length - 3) > 0"><span>+{{api.industry_name.length - 3}}</span></li>
                 </ul>
               </a>
             </div>

@@ -35,7 +35,7 @@ const routes: Routes = [
     component: ApiListComponent
   },
   {
-    path: 'api-detail',
+    path: 'api-detail/:id',
     component: ApiDetailComponent
   },
 ];
