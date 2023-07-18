@@ -23,7 +23,7 @@ export class LoginComponent {
 	}
 
   login(){
-    this.apiService.get(`api/v1/user/login?email=${this.loginForm.value.email}&password${this.loginForm.value.password}`).subscribe((res: any) => {
+    this.apiService.get(`api/v1/user/login?email=${this.loginForm.value.email}&password=${this.loginForm.value.password}`).subscribe((res: any) => {
       console.log(res, '------------>>>>>>>>>>>>>>>')
     });
 

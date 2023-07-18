@@ -7,15 +7,15 @@
         <p>to continue to Upaj API</p>
       </div>
       <div class="upaj-box">
-        <form autocomplete="off">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" placeholder="Enter Registered Email ID">
+              <input type="text" autocomplete="off" class="form-text-input" formControlName="email" placeholder="Enter Registered Email ID">
             </div>
           </div>
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="password" autocomplete="off" class="form-text-input" placeholder="Enter password">
+              <input type="password" autocomplete="off" class="form-text-input" formControlName="password" placeholder="Enter password">
             </div>
           </div>
           <div class="form-row">

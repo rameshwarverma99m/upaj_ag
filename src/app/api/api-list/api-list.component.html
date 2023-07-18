@@ -26,11 +26,32 @@
               </div>
               <button class="clearall">Clear All</button>
             </div>
-            <div class="filter-container">
-              <div class="category-wrap">
-                <div class="category-title" (click)="hideCategory()">
-                  <h3>Category</h3>
-                  <span [ngClass]="categoryhide ? 'rotate' : ''">
+            <form [formGroup]="filterForm" autocomplete="off">
+              <div class="filter-container">
+                <div class="category-wrap">
+                  <div class="category-title" (click)="hideCategory()">
+                    <h3>Category</h3>
+                    <span [ngClass]="categoryhide ? 'rotate' : ''">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M8.32702 11.4714C8.1464 11.652 7.85361 11.652 7.67299 11.4714L2.95773 6.75608C2.77711 6.57546 2.77711 6.28267 2.95773 6.10205L3.17575 5.884C3.35636 5.70338 3.6492 5.70338 3.82982 5.884L8 10.0542L12.1702 5.884C12.3508 5.70338 12.6436 5.70338 12.8242 5.884L13.0423 6.10205C13.2229 6.28267 13.2229 6.57546 13.0423 6.75608L8.32702 11.4714Z"
+                          fill="black" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="category-list" [ngClass]="categoryhide ? 'hide' : ''">
+                    <div class="category-radio-btn" *ngFor="let category of categoryList">
+                      <label for="{{category.category_name}}">
+                        <input type="radio" id="{{category.category_name}}" formControlName="category" name="category" [value]='category.category_name'>
+                        <span>{{category.category_name}}</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="category-wrap industry">
+                <div class="category-title" (click)="hideIndustri()">
+                  <h3>Industry</h3>
+                  <span [ngClass]="industriHide ? 'rotate' : ''">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                       <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.32702 11.4714C8.1464 11.652 7.85361 11.652 7.67299 11.4714L2.95773 6.75608C2.77711 6.57546 2.77711 6.28267 2.95773 6.10205L3.17575 5.884C3.35636 5.70338 3.6492 5.70338 3.82982 5.884L8 10.0542L12.1702 5.884C12.3508 5.70338 12.6436 5.70338 12.8242 5.884L13.0423 6.10205C13.2229 6.28267 13.2229 6.57546 13.0423 6.75608L8.32702 11.4714Z"
@@ -38,108 +59,17 @@
                     </svg>
                   </span>
                 </div>
-                <div class="category-list" [ngClass]="categoryhide ? 'hide' : ''">
-                  <div class="category-radio-btn">
-                    <label for="weather">
-                      <input type="radio" id="weather" name="category">
-                      <span>Absolute Weather(24)</span>
+                <div class="category-list" [ngClass]="industriHide ? 'hide' : ''">
+                  <div class="category-radio-btn" *ngFor="let industry of industryList">
+                    <label for="{{industry.industry_name}}">
+                      <input type="checkbox" id="{{industry.industry_name}}" formControlName="industry" name="{{industry.industry_name}}">
+                      <span>{{industry.industry_name}}</span>
                     </label>
                   </div>
-                  <div class="category-radio-btn">
-                    <label for="land">
-                      <input type="radio" id="land" name="category">
-                      <span>Absolute land(4)</span>
-                    </label>
-                  </div>
-                  <div class="category-radio-btn">
-                    <label for="farmhealth">
-                      <input type="radio" id="farmhealth" name="category">
-                      <span>Absolute Farm Health(45)</span>
-                    </label>
-                  </div>
-                  <div class="category-radio-btn">
-                    <label for="soilhealth">
-                      <input type="radio" id="soilhealth" name="category">
-                      <span>Soil health(23)</span>
-                    </label>
-                  </div>
-                  <div class="category-radio-btn">
-                    <label for="yieldprediction">
-                      <input type="radio" id="yieldprediction" name="category">
-                      <span>Absolute Yield Prediction(34)</span>
-                    </label>
-                  </div>
+                </div>
                 </div>
               </div>
-              <div class="category-wrap industry">
-              <div class="category-title" (click)="hideIndustri()">
-                <h3>Industry</h3>
-                <span [ngClass]="industriHide ? 'rotate' : ''">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M8.32702 11.4714C8.1464 11.652 7.85361 11.652 7.67299 11.4714L2.95773 6.75608C2.77711 6.57546 2.77711 6.28267 2.95773 6.10205L3.17575 5.884C3.35636 5.70338 3.6492 5.70338 3.82982 5.884L8 10.0542L12.1702 5.884C12.3508 5.70338 12.6436 5.70338 12.8242 5.884L13.0423 6.10205C13.2229 6.28267 13.2229 6.57546 13.0423 6.75608L8.32702 11.4714Z"
-                      fill="black" />
-                  </svg>
-                </span>
-              </div>
-              <div class="category-list" [ngClass]="industriHide ? 'hide' : ''">
-                <div class="category-radio-btn">
-                  <label for="idustry-1">
-                    <input type="checkbox" id="idustry-1" name="idustry-1">
-                    <span>Input Company(45)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-2">
-                    <input type="checkbox" id="idustry-2" name="idustry-2">
-                    <span>NGOs(3)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-3">
-                    <input type="checkbox" id="idustry-3" name="idustry-3">
-                    <span>Government(12)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-4">
-                    <input type="checkbox" id="idustry-4" name="idustry-4">
-                    <span>Soil health(23)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-5">
-                    <input type="checkbox" id="idustry-5" name="idustry-5">
-                    <span>FinTech(26)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-6">
-                    <input type="checkbox" id="idustry-6" name="idustry-6">
-                    <span>NGOs(3)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-7">
-                    <input type="checkbox" id="idustry-7" name="idustry-7">
-                    <span>Government(12)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-8">
-                    <input type="checkbox" id="idustry-8" name="idustry-8">
-                    <span>Soil health(23)</span>
-                  </label>
-                </div>
-                <div class="category-radio-btn">
-                  <label for="idustry-9">
-                    <input type="checkbox" id="idustry-9" name="idustry-9">
-                    <span>FinTech(26)</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+            </form>
           <div class="filter-apply">
             <button class="apply-btn" (click)="applyFilter()">Apply</button>
           </div>
@@ -190,175 +120,14 @@
             </div>
           </div>
           <div class="api-list" [ngClass]="listStyle ? 'listStyle' : ''">
-            <div class="api-list-card">
+            <div class="api-list-card" *ngFor="let api of apiList">
               <a href="#">
                 <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
-                    with vegetation - Index</p>
+                  <h2>{{ api.api_name }}</h2>
+                  <p>{{ api.about }}</p>
                 </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
-                    with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
-                    with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index It measures how much land is covered
-                    with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
-                </ul>
-              </a>
-            </div>
-            <div class="api-list-card">
-              <a href="#">
-                <div class="api-list-heading">
-                  <h2>Evapotranspiration Historical - 30 years Monthly/Annually API</h2>
-                  <p>It measures how much land is covered with vegetation - Index</p>
-                </div>
-                <ul class="tags">
-                  <li>Weather</li>
-                  <li>Banking</li>
-                  <li>Banking</li>
-                  <li>+4</li>
+                <ul class="tags" *ngFor="let industry of api.industry_name">
+                  <li>{{industry}}</li>
                 </ul>
               </a>
             </div>
