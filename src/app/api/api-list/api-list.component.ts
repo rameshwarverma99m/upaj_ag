@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api-service/api-service.service';
 
 @Component({
@@ -16,19 +16,24 @@ export class ApiListComponent {
   industriHide:boolean = false;
   categoryList: any = [];
   industryList: any = [];
+  industryNameList: any = [];
   radioSelected: string = '';
-  filterForm: FormGroup;
+  categoryFilterForm: FormGroup;
+  industryFilterForm: FormGroup;
   apiList: any =[];
   allApiList: any =[];
+  checkboxGroup: { [key: string]: FormControl } = {};
+  selectedIndustry: string[] = [];
+  selectedCategory: string = '';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private formBuilder: FormBuilder,
     private apiService: ApiService
     ) {
-      this.filterForm = this.formBuilder.group({
+      this.industryFilterForm = new FormGroup(this.checkboxGroup);
+      this.categoryFilterForm = this.formBuilder.group({
         category: ['', Validators.required],
-        industry: ['', Validators.required],
       });
     }
 
@@ -36,10 +41,9 @@ export class ApiListComponent {
     this.getCategory();
     this.getIndustry();
     this.getApiList();
-    this.filterForm.get('category')?.valueChanges.subscribe(x => {
-      this.apiList = this.allApiList.filter((el: any) => {
-        return el.category_name === x;
-      })
+    this.categoryFilterForm.get('category')?.valueChanges.subscribe(x => {
+      this.selectedCategory = x;
+      this.updateApiList();
    })
   }
 
@@ -66,16 +70,35 @@ export class ApiListComponent {
   hideIndustri(){
     this.industriHide = !this.industriHide;
   }
+
   getCategory(){
     this.apiService.get('api/v1/api/getCategories').subscribe((res: any) => {
       this.categoryList = res.data
     });
   }
+
   getIndustry(){
     this.apiService.get('api/v1/api/getindustries').subscribe((res: any) => {
       this.industryList = res.data;
+      this.industryList.forEach((el: any) => {
+        this.industryNameList.push(el.industry_name);
+      })
+      this.industryNameList.forEach((option: string) => {
+        const checkboxControl = new FormControl(false);
+        checkboxControl.valueChanges.subscribe((value) => {
+          if (value) {
+            this.selectedIndustry.push(option);
+            this.updateApiList();
+          } else {
+            this.selectedIndustry = this.selectedIndustry.filter((item: any) => !item.includes(option));
+            this.updateApiList();
+          }
+        });
+        this.checkboxGroup[option] = checkboxControl;
+      });
     })
   }
+
   getApiList(){
     const obj = {
       "filter_on": false,
@@ -87,11 +110,31 @@ export class ApiListComponent {
     }
     this.apiService.post('api/v1/api/getApiListing', obj).subscribe((res: any) => {
       this.apiList = res.data;
-      this.allApiList = res.data;
       this.apiList.forEach((el: any) => {
         let indusrty = el.industry_name.split(",");
         el.industry_name = indusrty;
       });
+      this.allApiList = this.apiList;
     });
+  }
+
+  updateApiList(){
+    let list =  this.allApiList;
+    if(this.selectedCategory){
+      list = list.filter((el: any) => {
+        return el.category_name === this.selectedCategory;
+      })
+    }
+    if(this.selectedIndustry.length > 0){
+      list = list.filter((el: any) => {
+        return this.selectedIndustry.some((element) => el.industry_name.includes(element));
+      })
+    }
+    this.apiList = list;
+  }
+
+  clearAll(){
+    this.categoryFilterForm.reset();
+    this.industryFilterForm.reset();
   }
 }

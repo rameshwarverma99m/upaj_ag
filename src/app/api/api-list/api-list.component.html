@@ -24,10 +24,10 @@
                 </button>
                 <h2>Filters</h2>
               </div>
-              <button class="clearall">Clear All</button>
+              <button class="clearall" (click)="clearAll()">Clear All</button>
             </div>
-            <form [formGroup]="filterForm" autocomplete="off">
-              <div class="filter-container">
+            <div class="filter-container">
+              <form [formGroup]="categoryFilterForm" autocomplete="off">
                 <div class="category-wrap">
                   <div class="category-title" (click)="hideCategory()">
                     <h3>Category</h3>
@@ -48,28 +48,30 @@
                     </div>
                   </div>
                 </div>
+              </form>
+              <form [formGroup]="industryFilterForm" autocomplete="off">
                 <div class="category-wrap industry">
-                <div class="category-title" (click)="hideIndustri()">
-                  <h3>Industry</h3>
-                  <span [ngClass]="industriHide ? 'rotate' : ''">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M8.32702 11.4714C8.1464 11.652 7.85361 11.652 7.67299 11.4714L2.95773 6.75608C2.77711 6.57546 2.77711 6.28267 2.95773 6.10205L3.17575 5.884C3.35636 5.70338 3.6492 5.70338 3.82982 5.884L8 10.0542L12.1702 5.884C12.3508 5.70338 12.6436 5.70338 12.8242 5.884L13.0423 6.10205C13.2229 6.28267 13.2229 6.57546 13.0423 6.75608L8.32702 11.4714Z"
-                        fill="black" />
-                    </svg>
-                  </span>
-                </div>
-                <div class="category-list" [ngClass]="industriHide ? 'hide' : ''">
-                  <div class="category-radio-btn" *ngFor="let industry of industryList">
-                    <label for="{{industry.industry_name}}">
-                      <input type="checkbox" id="{{industry.industry_name}}" formControlName="industry" name="{{industry.industry_name}}">
-                      <span>{{industry.industry_name}}</span>
-                    </label>
+                  <div class="category-title" (click)="hideIndustri()">
+                    <h3>Industry</h3>
+                    <span [ngClass]="industriHide ? 'rotate' : ''">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M8.32702 11.4714C8.1464 11.652 7.85361 11.652 7.67299 11.4714L2.95773 6.75608C2.77711 6.57546 2.77711 6.28267 2.95773 6.10205L3.17575 5.884C3.35636 5.70338 3.6492 5.70338 3.82982 5.884L8 10.0542L12.1702 5.884C12.3508 5.70338 12.6436 5.70338 12.8242 5.884L13.0423 6.10205C13.2229 6.28267 13.2229 6.57546 13.0423 6.75608L8.32702 11.4714Z"
+                          fill="black" />
+                      </svg>
+                    </span>
                   </div>
-                </div>
-                </div>
-              </div>
-            </form>
+                  <div class="category-list" [ngClass]="industriHide ? 'hide' : ''">
+                    <div class="category-radio-btn" *ngFor="let industry of industryList">
+                      <label for="{{industry.industry_name}}">
+                        <input type="checkbox" id="{{industry.industry_name}}" [formControlName]="industry.industry_name" name="{{industry.industry_name}}">
+                        <span>{{industry.industry_name}}</span>
+                      </label>
+                    </div>
+                  </div>
+                  </div>
+              </form>
+            </div>
           <div class="filter-apply">
             <button class="apply-btn" (click)="applyFilter()">Apply</button>
           </div>
