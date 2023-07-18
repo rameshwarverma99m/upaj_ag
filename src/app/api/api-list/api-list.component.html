@@ -128,8 +128,8 @@
                   <h2>{{ api.api_name }}</h2>
                   <p>{{ api.about }}</p>
                 </div>
-                <ul class="tags" *ngFor="let industry of api.industry_name">
-                  <li>{{industry}}</li>
+                <ul class="tags">
+                  <li *ngFor="let industry of api.industry_name"><span>{{industry}}</span></li>
                 </ul>
               </a>
             </div>

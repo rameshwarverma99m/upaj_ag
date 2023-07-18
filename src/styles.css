@@ -447,7 +447,7 @@ q:after {
 }
 
 .industry:first-child {
-  margin-left: 75px;
+  /* margin-left: 75px; */
 }
 
 .industry-list .industry>span {
