@@ -2,7 +2,7 @@
   <div class="container">
     <nav>
       <ul class="cd-breadcrumb custom-separator">
-        <li><a href="#">Home</a></li>
+        <li><a [routerLink]="['/']">Home</a></li>
         <li class="current">API Directory</li>
       </ul>
     </nav>
@@ -121,7 +121,7 @@
           </div>
           <div class="api-list" [ngClass]="listStyle ? 'listStyle' : ''">
             <div class="api-list-card" *ngFor="let api of apiList">
-              <a href="#">
+              <a [routerLink]="['/']">
                 <div class="api-list-heading">
                   <h2>{{ api.api_name }}</h2>
                   <p>{{ api.about }}</p>
