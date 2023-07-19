@@ -11,6 +11,8 @@ export class ApiDetailComponent {
   activeTab: number = 1;
   api_code:string = '';
   apiDetail: any = [];
+  errorCode: any = {};
+  statusCode: any = {};
 
   constructor(
     private router: Router,
@@ -27,9 +29,22 @@ export class ApiDetailComponent {
     this.apiService.get(`api/v1/api/getApiDetails?api_code=${this.api_code}`).subscribe((res:any) => {
       this.apiDetail = res.data;
       this.apiDetail.input_attribute = JSON.parse(this.apiDetail.input_attribute);
+      this.apiDetail.output_attribute = JSON.parse(this.apiDetail.output_attribute);
+      this.apiDetail.response_code_and_description = JSON.parse(this.apiDetail.response_code_and_description);
+      this.errorCode = this.apiDetail.response_code_and_description.error_code;
+      this.statusCode = this.apiDetail.response_code_and_description.status_code;
+      console.log(this.apiDetail)
     })
   }
   setActiveTab(tabNumber: number) {
     this.activeTab = tabNumber;
+  }
+  getFieldValue(value: any, field: string){
+    if(field === 'data_type'){
+      return value.data_type;
+    }
+    if(field === 'description'){
+      return value.description;
+    }
   }
 }

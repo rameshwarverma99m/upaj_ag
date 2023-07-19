@@ -169,7 +169,7 @@
             <div class="api-demo-code">
               <pre>
                 <code class="language-javascript">
-                 {{ "API PROD URL" }} : {{ apiDetail.prod_url }}
+                 {{ "API PROD URL" }} : {{apiDetail.prod_url}}
                 </code>
               </pre>
             </div>
@@ -202,10 +202,8 @@
           <tbody>
             <tr *ngFor="let item of apiDetail.input_attribute | keyvalue">
               <td>{{item.key}}</td>
-              <td>string</td>
-              <td>Polygon of area of interest is entered in format
-                [[longitude1,latitude1],[longitude2,latitude2],...,[longitude1,latitude1]]Polygon string should be
-                circular and used in EPSG:4326 format.</td>
+              <td>{{ getFieldValue(item.value, 'data_type') }}</td>
+              <td>{{ getFieldValue(item.value, 'description') }}</td>
             </tr>
           </tbody>
         </table>
@@ -222,33 +220,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Weather Historical</td>
-              <td>Historical weather data of specified date range</td>
-            </tr>
-            <tr>
-              <td>SolarRadiation_watt</td>
-              <td>Solar radiation (in watt) provides both light and heat energy that is necessary for living organisms</td>
-            </tr>
-            <tr>
-              <td>date</td>
-              <td>date in format YYYY-MM-DD for which historical weather data is shown</td>
-            </tr>
-            <tr>
-              <td>DailyLightIntegral_moles</td>
-              <td>Daily light integral (in moles) used to evaluate amount of light received by plants</td>
-            </tr>
-            <tr>
-              <td>Humidity_Percent</td>
-              <td>Humidity (in percentage) gives amount of water vapour present in air and holds importance in surface life</td>
-            </tr>
-            <tr>
-              <td>MinHumidity_Percent</td>
-              <td>Minimum Humidity (in percentage) gives minimum amount of water vapour in air</td>
-            </tr>
-            <tr>
-              <td>MaxHumidity_Percent</td>
-              <td>Maximum Humidity (in percentage) gives maximum amount of water vapour in air</td>
+            <tr *ngFor="let item of apiDetail.output_attribute | keyvalue">
+              <td>{{ item.key }}</td>
+              <td>{{ item.value }}</td>
             </tr>
           </tbody>
         </table>
@@ -271,33 +245,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>200</td>
-              <td>OK</td>
-            </tr>
-            <tr>
-              <td>201</td>
-              <td>Created</td>
-            </tr>
-            <tr>
-              <td>202</td>
-              <td>No Content</td>
-            </tr>
-            <tr>
-              <td>203</td>
-              <td>Bad Requested</td>
-            </tr>
-            <tr>
-              <td>204</td>
-              <td>Unauthorized</td>
-            </tr>
-            <tr>
-              <td>205</td>
-              <td>Not Found</td>
-            </tr>
-            <tr>
-              <td>206</td>
-              <td>Not Acceptable</td>
+            <tr *ngFor="let item of statusCode | keyvalue">
+              <td>{{item.key}}</td>
+              <td>{{item.value}}</td>
             </tr>
           </tbody>
         </table>
@@ -312,33 +262,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>200</td>
-              <td>OK</td>
-            </tr>
-            <tr>
-              <td>201</td>
-              <td>Created</td>
-            </tr>
-            <tr>
-              <td>202</td>
-              <td>No Content</td>
-            </tr>
-            <tr>
-              <td>203</td>
-              <td>Bad Requested</td>
-            </tr>
-            <tr>
-              <td>204</td>
-              <td>Unauthorized</td>
-            </tr>
-            <tr>
-              <td>205</td>
-              <td>Not Found</td>
-            </tr>
-            <tr>
-              <td>206</td>
-              <td>Not Acceptable</td>
+            <tr *ngFor="let item of errorCode | keyvalue">
+              <td>{{item.key}}</td>
+              <td>{{item.value}}</td>
             </tr>
           </tbody>
         </table>
