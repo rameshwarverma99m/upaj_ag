@@ -25,6 +25,7 @@ export class ApiListComponent {
   checkboxGroup: { [key: string]: FormControl } = {};
   selectedIndustry: string[] = [];
   selectedCategory: string = '';
+  searchTerm = '';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,

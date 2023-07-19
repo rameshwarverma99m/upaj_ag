@@ -99,7 +99,7 @@
                       fill="#1F1F1F" />
                   </svg>
                 </span>
-                <input class="input-search" placeholder="Type here to search">
+                <input class="input-search" placeholder="Type here to search" [(ngModel)]="searchTerm">
               </div>
               <div class="changeListType">
                 <button class="changeListTypeBtn" (click)="cardType()">
@@ -122,7 +122,7 @@
             </div>
           </div>
           <div class="api-list" [ngClass]="listStyle ? 'listStyle' : ''">
-            <div class="api-list-card" *ngFor="let api of apiList">
+            <div class="api-list-card" *ngFor="let api of apiList | searchFilter: searchTerm;">
               <a routerLink="/api-detail/{{api.api_code}}">
                 <div class="api-list-heading">
                   <h2>{{ api.api_name }}</h2>

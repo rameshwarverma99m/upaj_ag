@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiListComponent } from './api/api-list/api-list.component';
 import { ApiDetailComponent } from './api/api-detail/api-detail.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ApiDetailComponent } from './api/api-detail/api-detail.component';
     ResetPasswordComponent,
     HomeComponent,
     ApiListComponent,
-    ApiDetailComponent
+    ApiDetailComponent,
+    SearchFilterPipe
   ],
   imports: [
     AppRoutingModule,
