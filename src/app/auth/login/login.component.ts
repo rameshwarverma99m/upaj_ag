@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api-service/api-service.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class LoginComponent {
   constructor(
 		private apiService: ApiService,
 		private formBuilder: FormBuilder,
-    // private router: Router
+    private router: Router
 		) {
 		this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -24,7 +24,7 @@ export class LoginComponent {
 
   login(){
     this.apiService.get(`api/v1/user/login?email=${this.loginForm.value.email}&password=${this.loginForm.value.password}`).subscribe((res: any) => {
-      console.log(res, '------------>>>>>>>>>>>>>>>')
+      this.router.navigateByUrl('/api-list');
     });
 
   }

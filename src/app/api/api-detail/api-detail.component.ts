@@ -33,6 +33,8 @@ export class ApiDetailComponent {
       this.apiDetail.response_code_and_description = JSON.parse(this.apiDetail.response_code_and_description);
       this.errorCode = this.apiDetail.response_code_and_description.error_code;
       this.statusCode = this.apiDetail.response_code_and_description.status_code;
+      this.apiDetail.request_json = JSON.parse(this.apiDetail.request_json);
+      this.apiDetail.response = JSON.parse(this.apiDetail.response);
       console.log(this.apiDetail)
     })
   }

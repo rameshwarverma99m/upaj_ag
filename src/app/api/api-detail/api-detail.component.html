@@ -77,87 +77,36 @@
           <div class="hidden" [ngClass]="activeTab === 1 ? 'show' : ''">
             <div class="code-container">
               <div class="api-demo-code">
-                <pre>
+                {{ apiDetail.curl_request }}
+                <!-- <pre>
                   <code class="language-javascript">
-                    {{ "import { Auth } from './auth'" }}
-                    {{"const ticketImg = 'https://myticketimage.com';" }}
-
-                    function Host() {{ '{' }}
-
-                      {{ "const { data: signer } = useSigner();" }}
-                      {{ "const { isConnected, address } =" }}
-                      {{ "useAccount();"}}
-                      {{ "const [userAccess, setUserAccess] =" }}
-                      {{ "useState(false);"}}
-
-                      {{ "useEffect(() => { " }}
-
-                      {{ "const interval = setInterval( async () => {" }}
-                      {{  "if (isConnected && signer) {"}}
-                       
-                      {{ "const = await hasAccess(signer," }}
-                      {{ "GATE_CONTRACT_ADDRESS, GATE_ID);" }}
-                       
+                   {{ curl_request }}
                   </code>
-                </pre>
+                </pre> -->
               </div>
             </div>
           </div>
           <div class="hidden" [ngClass]="activeTab === 2 ? 'show' : ''">
             <div class="code-container">
               <div class="api-demo-code">
-                <pre>
+                <pre>{{ apiDetail.request_json | json }}</pre>
+                <!-- <pre>
                   <code class="language-javascript">
-                    {{ "import { Auth } from './auth'" }}
-                    {{"const ticketImg = 'https://myticketimage.com';" }}
-
-                    function Host() {{ '{' }}
-
-                      {{ "const { data: signer } = useSigner();" }}
-                      {{ "const { isConnected, address } =" }}
-                      {{ "useAccount();"}}
-                      {{ "const [userAccess, setUserAccess] =" }}
-                      {{ "useState(false);"}}
-
-                      {{ "useEffect(() => { " }}
-
-                      {{ "const interval = setInterval( async () => {" }}
-                      {{  "if (isConnected && signer) {"}}
-                       
-                      {{ "const = await hasAccess(signer," }}
-                      {{ "GATE_CONTRACT_ADDRESS, GATE_ID);" }}
-                       
+                   {{apiDetail.request_json}}
                   </code>
-                </pre>
+                </pre> -->
               </div>
             </div>
           </div>
           <div class="hidden" [ngClass]="activeTab === 3 ? 'show' : ''">
             <div class="code-container">
               <div class="api-demo-code">
-                <pre>
+                <pre>{{ apiDetail.response | json }}</pre>
+                <!-- <pre>
                   <code class="language-javascript">
-                    {{ "import { Auth } from './auth'" }}
-                    {{"const ticketImg = 'https://myticketimage.com';" }}
-
-                    function Host() {{ '{' }}
-
-                      {{ "const { data: signer } = useSigner();" }}
-                      {{ "const { isConnected, address } =" }}
-                      {{ "useAccount();"}}
-                      {{ "const [userAccess, setUserAccess] =" }}
-                      {{ "useState(false);"}}
-
-                      {{ "useEffect(() => { " }}
-
-                      {{ "const interval = setInterval( async () => {" }}
-                      {{  "if (isConnected && signer) {"}}
-                       
-                      {{ "const = await hasAccess(signer," }}
-                      {{ "GATE_CONTRACT_ADDRESS, GATE_ID);" }}
-                       
+                    {{ apiDetail.response }}
                   </code>
-                </pre>
+                </pre> -->
               </div>
             </div>
           </div>
@@ -167,11 +116,12 @@
         <div class="code-tab-content" style="border-radius: 16px;">
           <div class="code-container">
             <div class="api-demo-code">
-              <pre>
+              API PROD URL : {{apiDetail.prod_url}}
+              <!-- <pre>
                 <code class="language-javascript">
                  {{ "API PROD URL" }} : {{apiDetail.prod_url}}
                 </code>
-              </pre>
+              </pre> -->
             </div>
           </div>
         </div>
