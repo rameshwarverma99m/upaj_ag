@@ -2,46 +2,78 @@
   <div class="auth-box">
     <div class="upaj-logo"><img src="../../../assets/images/logo-gray.svg"></div>
     <div class="upaj-form">
-      <div class="upaj-form-header">
-        <h1>Signup</h1>
-        <p>to test and subscribe to Upaj API</p>
-      </div>
-      <div class="upaj-box">
-        <form [formGroup]="signUpForm" (ngSubmit)="signup()" autocomplete="off">
-          <div class="form-row">
-            <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" formControlName="fullName" placeholder="Full Name">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" formControlName="orgName"  placeholder="Organisation Name">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-input-wrap">
-              <input type="email" autocomplete="off" class="form-text-input" formControlName="email" placeholder="Enter Email ID">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" formControlName="mobileNo" placeholder="Phone  Number">
-            </div>
-          </div>
-          <div class="form-row btn-row">
-            <div class="form-input-wrap">
-              <input type="submit" [disabled]="!signUpForm.valid" class="submit-btn" value="Signup">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-input-wrap">
-              <div class="info-msg">
-                Already registered? <a [routerLink]="['/login']">Login</a>
+      <div class="singupinner">
+        <div class="upaj-form-header">
+          <h1>Signup</h1>
+          <p>to test and subscribe to Upaj API</p>
+        </div>
+        <div class="upaj-box">
+          <form [formGroup]="signUpForm" (ngSubmit)="signup()" autocomplete="off">
+            <div class="form-row">
+              <div class="form-input-wrap">
+                <input type="text" autocomplete="off" class="form-text-input" formControlName="fullName"
+                  placeholder="Full Name">
               </div>
             </div>
-          </div>
-        </form>
+            <div class="form-row">
+              <div class="form-input-wrap">
+                <input type="text" autocomplete="off" class="form-text-input" formControlName="orgName"
+                  placeholder="Organisation Name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-input-wrap">
+                <input type="email" autocomplete="off" class="form-text-input" formControlName="email"
+                  placeholder="Enter Email ID">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-input-wrap">
+                <input type="text" autocomplete="off" class="form-text-input" formControlName="mobileNo"
+                  placeholder="Phone  Number">
+              </div>
+            </div>
+            <div class="form-row">
+              <p class="errorMsg">This is error msg</p>
+            </div>
+            <div class="form-row btn-row">
+              <div class="form-input-wrap">
+                <input type="submit" [disabled]="!signUpForm.valid" class="submit-btn" value="Signup">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-input-wrap">
+                <div class="info-msg">
+                  Already registered? <a [routerLink]="['/login']">Login</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+
+      <div class="signup-seccess" style="display: none;">
+        <div class="success-text">
+          <h2>Check your email</h2>
+          <p>We have sent the verification link to your email id <strong>rameshwarverma99m@gmail.com</strong> . Please click on the link to verify your account </p>
+        </div>
+      </div>
+      <div class="signup-seccess" style="display: none;">
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
+            <circle cx="40" cy="40.1553" r="40" fill="#5BBC74"/>
+            <path d="M63.03 25.9359L32.7737 55.8259L18.9062 42.1263L22.4614 38.6142L32.7737 48.7768L59.4749 22.4238L63.03 25.9359Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="success-text">
+          <h2>Registration Successful</h2>
+          <p>We have been successfully registered on Upaj API Marketplace</p>
+        </div>
+        <div class="redirect-btn">
+          <a href="#" class="btn primary-btn">Explore APIs</a>
+        </div>
+      </div>
+      
     </div>
   </div>
 </div>
