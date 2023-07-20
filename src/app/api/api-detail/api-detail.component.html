@@ -77,7 +77,7 @@
         <div class="code-tab-content">
           <div class="hidden" [ngClass]="activeTab === 1 ? 'show' : ''">
             <div class="code-container">
-              <div class="api-demo-code">
+              <div class="api-demo-code codeBlock">
                 {{ apiDetail.curl_request }}
                 <!-- <pre>
                   <code class="language-javascript">
@@ -89,25 +89,15 @@
           </div>
           <div class="hidden" [ngClass]="activeTab === 2 ? 'show' : ''">
             <div class="code-container">
-              <div class="api-demo-code">
-                <pre>{{ apiDetail.request_json | json }}</pre>
-                <!-- <pre>
-                  <code class="language-javascript">
-                   {{apiDetail.request_json}}
-                  </code>
-                </pre> -->
+              <div class="api-demo-code codeBlock">
+                {{ apiDetail.request_json | json }}
               </div>
             </div>
           </div>
           <div class="hidden" [ngClass]="activeTab === 3 ? 'show' : ''">
             <div class="code-container">
-              <div class="api-demo-code">
-                <pre>{{ apiDetail.response | json }}</pre>
-                <!-- <pre>
-                  <code class="language-javascript">
-                    {{ apiDetail.response }}
-                  </code>
-                </pre> -->
+              <div class="api-demo-code codeBlock">
+                {{ apiDetail.response | json }}
               </div>
             </div>
           </div>
@@ -118,11 +108,6 @@
           <div class="code-container">
             <div class="api-demo-code">
               API PROD URL : {{apiDetail.prod_url}}
-              <!-- <pre>
-                <code class="language-javascript">
-                 {{ "API PROD URL" }} : {{apiDetail.prod_url}}
-                </code>
-              </pre> -->
             </div>
           </div>
         </div>

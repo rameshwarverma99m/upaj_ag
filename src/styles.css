@@ -1708,8 +1708,14 @@ q:after {
 .code-container .api-demo-code {
   color: #d4d4d4;
   font-family: 'Courier New', Courier, monospace;
+  padding: 20px 0px;
+  white-space: pre-line;
+  word-break: break-all;
 }
-
+.code-container .api-demo-code.codeBlock{
+  min-height: 420px;
+  word-wrap: break-word;
+}
 .code-container .api-demo-code pre[class*="language-"],
 .code-container .api-demo-code code[class*="language-"] {
   background-color: transparent;
@@ -1766,6 +1772,7 @@ q:after {
   border-collapse: collapse;
   border-radius: 4px;
   width: 100%;
+  background-color: #ffffff;
 }
 
 .api-table.attribute {
@@ -1813,7 +1820,7 @@ q:after {
 }
 
 .api-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
 }
 
 .mobile-btn-go {
@@ -2315,6 +2322,17 @@ q:after {
     padding-top: 0;
     gap: 24px;
     margin-bottom: 24px;
+  }
+
+  .footer{
+    padding: 40px 20px;
+  }
+  .footer-links{
+    flex-direction: column;
+    gap: 16px;
+  }
+  .copyright{
+    text-align: center;
   }
 }
 
