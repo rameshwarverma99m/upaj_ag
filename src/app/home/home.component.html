@@ -13,7 +13,7 @@
     </div>
     <div class="btn-row">
       <a class="btn primary-btn" href="#">Schedule a free call</a>
-      <a class="btn secondaty-btn" href="#">Explore APIs</a>
+      <a class="btn secondaty-btn" [routerLink]="['/api-list']">Explore APIs</a>
     </div>
     <div class="home-image">
       <img src="../assets/images/home-banner.svg" alt="">
@@ -191,7 +191,7 @@
           <p>Add access control capabilities that unlock new revenue models with just a few lines of code</p>
         </div>
         <div class="explore-btn">
-          <a [routerLink]="['/signup']" class="btn primary-btn">Explore APIs</a>
+          <a [routerLink]="['/api-list']" class="btn primary-btn">Explore APIs</a>
         </div>
       </div>
     </div>
@@ -201,7 +201,7 @@
   <div class="container">
     <div class="exp-text">
       <h2>Created for tomorrow, TODAY.</h2>
-      <a [routerLink]="['/signup']" class="btn primary-btn">Explore APIs</a>
+      <a [routerLink]="['/api-list']" class="btn primary-btn">Explore APIs</a>
     </div>
   </div>
 </section>

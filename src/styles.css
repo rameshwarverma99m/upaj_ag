@@ -1523,7 +1523,7 @@ q:after {
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
-  text-decoration-line: strikethrough;
+  text-decoration: line-through;
 }
 
 .api-list-section-1 .api-list-banner .api-pricing .discount {

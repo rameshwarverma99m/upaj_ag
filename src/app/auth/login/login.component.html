@@ -10,19 +10,19 @@
         <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="text" autocomplete="off" class="form-text-input" formControlName="email" placeholder="Enter Registered Email ID">
+              <input type="text" autocomplete="off" class="form-text-input" formControlName="email" placeholder="Enter Email ID">
             </div>
           </div>
           <div class="form-row">
             <div class="form-input-wrap">
-              <input type="password" autocomplete="off" class="form-text-input" formControlName="password" placeholder="Enter password">
+              <input type="password" autocomplete="off" class="form-text-input" formControlName="password" placeholder="Enter Password">
             </div>
           </div>
-          <div class="form-row">
+          <!-- <div class="form-row">
             <div class="form-input-wrap forget-password">
               <a [routerLink]="['/forget-password']">Forgot password?</a>
             </div>
-          </div>
+          </div> -->
           <div class="form-row btn-row">
             <div class="form-input-wrap">
               <input type="submit" class="submit-btn" value="Login">

@@ -3,7 +3,8 @@
     <nav>
       <ul class="cd-breadcrumb custom-separator">
         <li><a [routerLink]="['/']">Home</a></li>
-        <li class="current">API Directory</li>
+        <li><a [routerLink]="['/api-list']">API Directory</a></li>
+        <li class="current">{{apiDetail.name}}</li>
       </ul>
     </nav>
   </div>
@@ -18,7 +19,7 @@
       </div>
       <div class="api-pricing">
         <div class="api-price">
-          <div class="selling-price"><strong>₹{{apiDetail.api_final_price_in_credits}}/{{apiDetail.charge_unit}}</strong></div>
+          <div class="selling-price"><strong>₹{{apiDetail.api_final_price_in_credits}} {{apiDetail.charge_unit}}</strong></div>
           <div class="original-price">₹{{apiDetail.api_base_price_in_credits}} {{apiDetail.charge_unit}}</div>
         </div>
         <div class="discount">{{apiDetail.api_discount}}%<span>Discount</span></div>
@@ -27,7 +28,7 @@
         <a class="btn primary-btn" href="#">Sign up and Start using</a>
         <a class="btn secondaty-btn" href="#">View Documentation</a>
       </div>
-      <div class="cloude-enabled">
+      <div class="cloude-enabled" style="display: none;">
         <h2>Enablements with</h2>
         <div class="cloude-service-list">
           <div>
