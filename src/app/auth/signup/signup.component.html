@@ -2,7 +2,7 @@
   <div class="auth-box">
     <div class="upaj-logo"><img src="../../../assets/images/logo-gray.svg"></div>
     <div class="upaj-form">
-      <div class="singupinner">
+      <div class="singupinner" *ngIf="showSignupForm">
         <div class="upaj-form-header">
           <h1>Signup</h1>
           <p>to test and subscribe to Upaj API</p>
@@ -27,15 +27,19 @@
                   placeholder="Enter Email ID">
               </div>
             </div>
+            <div class="form-row" *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+              <div class="errorMsg" *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required.</div>
+              <!-- <div class="errorMsg" *ngIf="signUpForm.get('email')?.errors?.['email']">Invalid email format.</div> -->
+            </div>
             <div class="form-row">
               <div class="form-input-wrap">
                 <input type="text" autocomplete="off" class="form-text-input" formControlName="mobileNo"
                   placeholder="Phone  Number">
               </div>
             </div>
-            <div class="form-row">
+            <!-- <div class="form-row">
               <p class="errorMsg">This is error msg</p>
-            </div>
+            </div> -->
             <div class="form-row btn-row">
               <div class="form-input-wrap">
                 <input type="submit" [disabled]="!signUpForm.valid" class="submit-btn" value="Signup">
@@ -52,13 +56,13 @@
         </div>
       </div>
 
-      <div class="signup-seccess" style="display: none;">
+      <div class="signup-seccess" *ngIf="singupMsg">
         <div class="success-text">
           <h2>Check your email</h2>
-          <p>We have sent the verification link to your email id <strong>rameshwarverma99m@gmail.com</strong> . Please click on the link to verify your account </p>
+          <p>We have sent the verification link to your email id <strong>{{signUpForm.value.email}}</strong> . Please click on the link to verify your account </p>
         </div>
       </div>
-      <div class="signup-seccess" style="display: none;">
+      <div class="signup-seccess" *ngIf="registeredSignupMsg">
         <div class="success-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
             <circle cx="40" cy="40.1553" r="40" fill="#5BBC74"/>

@@ -10,6 +10,9 @@ import { ApiService } from 'src/app/services/api-service/api-service.service';
 export class SignupComponent {
 
   signUpForm: FormGroup;
+  singupMsg: boolean = false;
+  registeredSignupMsg: boolean = false;
+  showSignupForm:boolean = true
 
   constructor(
 		private formBuilder: FormBuilder,
@@ -23,6 +26,11 @@ export class SignupComponent {
 		});
 	}
 
+  signupMsg(){
+    this.singupMsg = false;
+    this.registeredSignupMsg = true;
+  }
+
   signup(){
     var jsn = {
       userName: this.signUpForm.value.fullName,
@@ -30,9 +38,13 @@ export class SignupComponent {
       userEmail: this.signUpForm.value.email,
       userMobile: this.signUpForm.value.mobileNo
     }
-    console.log(jsn, '------------>>>>>>>>>>>>>>>>')
-    this.apiService.post( 'api/v1/user/register',jsn).subscribe(res => {
-      console.log(res, '------------>>>>>>>>>>>>>>>>')
+    this.apiService.post( 'api/v1/user/register',jsn).subscribe((res: any )=> {
+      if(!res.error){
+        this.showSignupForm = false;
+        this.singupMsg = true;
+        setTimeout(() => this.signupMsg(), 5000);
+      }
     });
   }
+  
 }

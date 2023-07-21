@@ -18,6 +18,9 @@
               <input type="password" autocomplete="off" class="form-text-input" formControlName="password" placeholder="Enter Password">
             </div>
           </div>
+          <div class="form-row" *ngIf="showError">
+            <p class="errorMsg">This is error msg {{ errorMsg }}</p>
+          </div>
           <div class="form-row btn-row">
             <div class="form-input-wrap">
               <input type="submit" [disabled]="!loginForm.valid" class="submit-btn" value="Login">

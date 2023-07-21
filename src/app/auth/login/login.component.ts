@@ -10,6 +10,8 @@ import { ApiService } from 'src/app/services/api-service/api-service.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  showError: boolean = false;
+  errorMsg: string = ''
 
   constructor(
 		private apiService: ApiService,
@@ -23,9 +25,17 @@ export class LoginComponent {
 	}
 
   login(){
-    this.apiService.get(`api/v1/user/login?email=${this.loginForm.value.email}&password=${this.loginForm.value.password}`).subscribe((res: any) => {
-      this.router.navigateByUrl('/api-list');
-    });
+    this.apiService.get(`api/v1/user/login?email=${this.loginForm.value.email}&password=${this.loginForm.value.password}`).subscribe(
+      (res: any) => {
+        this.router.navigateByUrl('/api-list');
+      }, 
+      (error: any) => {
+        if(error.error.error){
+          this.showError = true;
+          this.errorMsg = error.error.message
+        }
+      }
+      );
 
   }
 

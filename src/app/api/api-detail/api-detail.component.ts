@@ -35,7 +35,6 @@ export class ApiDetailComponent {
       this.statusCode = this.apiDetail.response_code_and_description.status_code;
       this.apiDetail.request_json = JSON.parse(this.apiDetail.request_json);
       this.apiDetail.response = JSON.parse(this.apiDetail.response);
-      console.log(this.apiDetail)
     })
   }
   setActiveTab(tabNumber: number) {
