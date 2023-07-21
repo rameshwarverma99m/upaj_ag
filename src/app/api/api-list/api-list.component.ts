@@ -116,9 +116,7 @@ export class ApiListComponent {
       this.apiList.forEach((el: any) => {
         let indusrty = el.industry_name.split(",");
         el.industry_name = indusrty;
-        if(indusrty === 'Insurance' || indusrty === 'Re-Insurance' ){
-          el.industry_name = 'Insurance, Re-Insurance';
-        }
+        el.industry_name = el.industry_name.map((item: any) => (item === 'Insurance' || item === ' Re-Insurance' ) ? 'Insurance, Re-Insurance' : item);
       });
       this.allApiList = this.apiList;
       this.getIndustryCountList();
@@ -154,9 +152,6 @@ export class ApiListComponent {
     }
     if(type === 'industry'){
       list = this.apiList.filter((el: any) => {
-        if(name === 'Insurance, Re-Insurance'){
-          return el.industry_name.includes('Insurance') || el.industry_name.includes('Re-Insurance');
-        }
         return el.industry_name.includes(name);
       })
     }
