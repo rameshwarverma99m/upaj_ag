@@ -65,7 +65,7 @@
                     <div class="category-radio-btn" *ngFor="let industry of industryList">
                       <label for="{{industry.industry_name}}">
                         <input type="checkbox" id="{{industry.industry_name}}" [formControlName]="industry.industry_name" name="{{industry.industry_name}}">
-                        <span>{{industry.industry_name}}({{showCount('industry', industry.industry_name)}})</span>
+                        <span>{{industry.industry_name}}({{(!industryListCount?.industry_name || industryListCount.industry_name === 0) ? showCount('industry', industry.industry_name) : industryListCount.industry_name}})</span>
                       </label>
                     </div>
                   </div>

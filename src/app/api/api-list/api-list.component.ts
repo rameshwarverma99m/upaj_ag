@@ -16,6 +16,7 @@ export class ApiListComponent {
   industriHide:boolean = false;
   categoryList: any = [];
   industryList: any = [];
+  industryListCount: any ={};
   industryNameList: any = [];
   radioSelected: string = '';
   categoryFilterForm: FormGroup;
@@ -45,6 +46,7 @@ export class ApiListComponent {
     this.categoryFilterForm.get('category')?.valueChanges.subscribe(x => {
       this.selectedCategory = x;
       this.updateApiList();
+      this.getIndustryCountList();
    })
   }
 
@@ -114,8 +116,12 @@ export class ApiListComponent {
       this.apiList.forEach((el: any) => {
         let indusrty = el.industry_name.split(",");
         el.industry_name = indusrty;
+        if(indusrty === 'Insurance' || indusrty === 'Re-Insurance' ){
+          el.industry_name = 'Insurance, Re-Insurance';
+        }
       });
       this.allApiList = this.apiList;
+      this.getIndustryCountList();
     });
   }
 
@@ -147,10 +153,19 @@ export class ApiListComponent {
       })
     }
     if(type === 'industry'){
-      list = this.allApiList.filter((el: any) => {
+      list = this.apiList.filter((el: any) => {
+        if(name === 'Insurance, Re-Insurance'){
+          return el.industry_name.includes('Insurance') || el.industry_name.includes('Re-Insurance');
+        }
         return el.industry_name.includes(name);
       })
     }
     return list.length;
+  }
+
+  getIndustryCountList(){
+    this.industryList.forEach((el:any) => {
+      this.industryListCount[`${el.industry_name}`] = this.showCount('industry', el.industry_name)
+    });
   }
 }
